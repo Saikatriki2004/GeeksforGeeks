@@ -1,4 +1,4 @@
-# Sorted subsequence of size 3
+#Sorted subsequence of size 3
 class Solution:
     def find3Numbers(self, arr):
         smallest = 10**9
