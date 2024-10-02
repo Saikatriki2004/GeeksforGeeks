@@ -1,14 +1,13 @@
-# from typing import List
-
-
 class Solution:
     def rotateDelete(self,  arr):
-        # code here
         n = len(arr)
-        for i in range(1,n):
-            arr.insert(0,arr.pop(-1))
-            if len(arr) - i < 0:
-                arr.pop(0)
-            else:
-                arr.pop(len(arr)-i)
+        for k in range(1, n // 2 + 1):
+            arr.insert(0, arr.pop())
+            arr.pop(-k)
         return arr[0]
+
+  # Example usage:
+sol = Solution()
+arr = [1, 2, 3, 4, 5, 6]
+result = sol.rotateDelete(arr)
+print(result)  # Output will be the last remaining element after all deletions and rotations
